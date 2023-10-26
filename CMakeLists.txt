@@ -39,6 +39,12 @@ add_library(liblog OBJECT
         src/liblog/logger.h
 )
 
+add_library(hashbrown OBJECT
+        src/hashbrown/hashbrown.h
+        src/hashbrown/pointer_hash.cpp
+        src/hashbrown/noncrypto_strings.cpp
+)
+
 add_library(libutils OBJECT
         src/libutils/target.cpp
         src/libutils/target.h
@@ -51,11 +57,11 @@ add_library(libutils OBJECT
 add_executable(${TARGETS_PREFIX}-tcc89
     src/c89/main.cpp
 )
-target_link_libraries(${TARGETS_PREFIX}-tcc89 libelf liblog libargparse)
 target_link_libraries(${TARGETS_PREFIX}-tcc89
         libelf
         liblog
         libargparse
+        hashbrown
         libutils
 )
 

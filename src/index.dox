@@ -9,8 +9,114 @@
  *
  * \section the TCC
  *
- * The tcc is my attempt at a standards compliant C compiler currently it's support is detailed in the all the tables
+ * The tcc is my attempt at a standards compliant C compiler currently it's standards compliance is unknown
  * section.
+ *
+ * \section Hashbrown
+ *
+ * Hashes and hashtable support library
+ *
+ * <table>
+ *     <caption id="multi_row">Hashbrown hash support</caption>
+ *     <tr><th>Name                 <th>support
+ *     <tr><th colspan="2">Cyclic Redundancy Checks (CRC)
+ *     <tr><td>cksum                <td>None
+ *     <tr><td>CRC-8                <td>None
+ *     <tr><td>CRC-16               <td>None
+ *     <tr><td>CRC-32               <td>None
+ *     <tr><td>CRC-64               <td>None
+ *     <tr><th colspan="2">Checksums (CKSM)
+ *     <tr><td>BSD-CKSM             <td>None
+ *     <tr><td>SYSV-CKSM            <td>None
+ *     <tr><td>sum8                 <td>None
+ *     <tr><td>Internet             <td>None
+ *     <tr><td>sum24                <td>None
+ *     <tr><td>sum32                <td>None
+ *     <tr><td>fletcher-4           <td>None
+ *     <tr><td>fletcher-8           <td>None
+ *     <tr><td>fletcher-16          <td>None
+ *     <tr><td>fletcher-32          <td>None
+ *     <tr><td>Adler-32             <td>None
+ *     <tr><td>xor8                 <td>None
+ *     <tr><td>Luhn Algo            <td>None
+ *     <tr><td>Verhoeff Algo        <td>None
+ *     <tr><td>Damm Algo            <td>None
+ *     <tr><th colspan="2">Universal hash function (UHF)
+ *     <tr><td>Rabin fingerprint    <td>None
+ *     <tr><td>tabulation hash      <td>None
+ *     <tr><td>universal 1-way hash <td>None
+ *     <tr><td>Zobrist hashing      <td>None
+ *     <tr><th colspan="2">NonCryptographic hash function
+ *     <tr><td>Pearson hashing      <td>None
+ *     <tr><td>Paul Hsieh's hash    <td>None
+ *     <tr><td>Buzhash              <td>None
+ *     <tr><td>FNV hash             <td>FNV-1-64bit (native for strings)
+ *     <tr><td>Jenkins hash function<td>None
+ *     <tr><td>Bernstein's hash djb2<td>None
+ *     <tr><td>PJW hash             <td>None
+ *     <tr><td>MurmurHash           <td>None
+ *     <tr><td>Fast-Hash            <td>None
+ *     <tr><td>SpookyHash           <td>None
+ *     <tr><td>CityHash             <td>None
+ *     <tr><td>FarmHash             <td>None
+ *     <tr><td>MetroHash            <td>None
+ *     <tr><td>nhash                <td>None
+ *     <tr><td>xxhash               <td>None
+ *     <tr><td>t1ha                 <td>None
+ *     <tr><td>pHash                <td>None
+ *     <tr><td>dhash                <td>None
+ *     <tr><td>SDBM                 <td>None
+ *     <tr><td>OSDB hash            <td>None
+ *     <tr><th colspan="2">Keyed cryptographic hash functions
+ *     <tr><td>BLAKE2               <td>None
+ *     <tr><td>BLAKE3               <td>None
+ *     <tr><td>HMAC                 <td>None
+ *     <tr><td>KMAC                 <td>None
+ *     <tr><td>MD6                  <td>None
+ *     <tr><td>One-key MAC (OMAC)   <td>None
+ *     <tr><td>PMAC (crypto)        <td>None
+ *     <tr><td>Poly1305-AES         <td>None
+ *     <tr><td>SipHash              <td>None
+ *     <tr><td>HighwayHash          <td>None
+ *     <tr><td>UMAC                 <td>None
+ *     <tr><td>VMAC                 <td>None
+ *     <tr><th colspan="2">Unkeyed cryptograhpic hash functions
+ *     <tr><td>BLAKE256             <td>None
+ *     <tr><td>BLAKE512             <td>None
+ *     <tr><td>BLAKE2S              <td>None
+ *     <tr><td>BLAKE2b              <td>None
+ *     <tr><td>BLAKE2X              <td>None
+ *     <tr><td>BLAKE3               <td>None
+ *     <tr><td>ECOH                 <td>None
+ *     <tr><td>FSB                  <td>None
+ *     <tr><td>GOST                 <td>None
+ *     <tr><td>Grostl               <td>None
+ *     <tr><td>HAS-160              <td>None
+ *     <tr><td>HAVAL                <td>None
+ *     <tr><td>JH                   <td>None
+ *     <tr><td>LSH                  <td>None
+ *     <tr><td>MD2                  <td>None
+ *     <tr><td>MD4                  <td>None
+ *     <tr><td>MD5                  <td>None
+ *     <tr><td>MD6                  <td>None
+ *     <tr><td>RadioGatun           <td>None
+ *     <tr><td>RIPEMD               <td>None
+ *     <tr><td>RIPEMD-128           <td>None
+ *     <tr><td>RIPEMD-160           <td>None
+ *     <tr><td>RIPEMD-320           <td>None
+ *     <tr><td>SHA-1                <td>None
+ *     <tr><td>SHA-224              <td>None
+ *     <tr><td>SHA-256              <td>None
+ *     <tr><td>SHA-384              <td>None
+ *     <tr><td>SHA-512              <td>None
+ *     <tr><td>SHA-3                <td>None
+ *     <tr><td>Skein                <td>None
+ *     <tr><td>Snefru               <td>None
+ *     <tr><td>Spectral Hash        <td>None
+ *     <tr><td>Streebog             <td>None
+ *     <tr><td>SWIFFT               <td>None
+ *     <tr><td>Tiger                <td>None
+ *     <tr><td>Whirlpool            <td>None
  *
  * \section all the tables
  *
@@ -21,6 +127,7 @@
  *     <tr><td>Argparse  <td>In progress  <td>Argument parsing
  *     <tr><td>liblog    <td>In progress  <td>Logging library
  *     <tr><td>libelf    <td>In progress  <td>Elf file format support library
+ *     <tr><td>hashbrown <td>In progress  <td>Hash and hashmap support library
  *     <tr><td>libutils  <td>Not Started  <td>Common utilities library
  *     <tr><th colspan="3">Executables
  *     <tr><td>teasm86   <td>Not Started  <td>Teapots assembler for x86
