@@ -39,6 +39,11 @@ add_library(liblog OBJECT
         src/liblog/logger.h
 )
 
+add_library(libutils OBJECT
+        src/libutils/target.cpp
+        src/libutils/target.h
+)
+
 ###################################################
 # Executables
 ###################################################
@@ -47,6 +52,12 @@ add_executable(${TARGETS_PREFIX}-tcc89
     src/c89/main.cpp
 )
 target_link_libraries(${TARGETS_PREFIX}-tcc89 libelf liblog libargparse)
+target_link_libraries(${TARGETS_PREFIX}-tcc89
+        libelf
+        liblog
+        libargparse
+        libutils
+)
 
 add_executable(${TARGETS_PREFIX}-readelf
     src/binutils/readelf/main.cpp
