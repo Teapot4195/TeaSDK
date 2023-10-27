@@ -5,7 +5,13 @@
  * \section Introduction
  *
  * This project started as a fun side project to learn how all this low level stuff worked, things like x86 assembly,
- * compilers and the like. Currently this project has a few subprojects
+ * compilers and the like. Currently this project has a few subprojects.
+ *
+ * <h1>DISCLAIMER: EVERYTHING IN THIS PROJECT IS FOR <b><u>EDUCATIONAL PURPOSE ONLY</u></b></h1>
+ *
+ * if you would like a cryptographically secure library look at something like openssl.
+ *
+ * all cryptographic facilities provided in this project are IN NO WAY SECURE
  *
  * \section the TCC
  *
@@ -21,10 +27,7 @@
  *     <tr><th>Name                 <th>support
  *     <tr><th colspan="2">Cyclic Redundancy Checks (CRC)
  *     <tr><td>cksum                <td>None
- *     <tr><td>CRC-8                <td>None
- *     <tr><td>CRC-16               <td>None
- *     <tr><td>CRC-32               <td>None
- *     <tr><td>CRC-64               <td>None
+ *     <tr><td>CRC                  <td>None
  *     <tr><th colspan="2">Checksums (CKSM)
  *     <tr><td>BSD-CKSM             <td>None
  *     <tr><td>SYSV-CKSM            <td>None
@@ -157,6 +160,4 @@
  *     <li>Item 2
  *   </ul>
  * </table>
- *
- * ABCDEFG
  */

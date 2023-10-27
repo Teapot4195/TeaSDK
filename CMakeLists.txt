@@ -39,15 +39,19 @@ add_library(liblog OBJECT
         src/liblog/logger.h
 )
 
+add_library(libutils OBJECT
+        src/libutils/target.cpp
+        src/libutils/target.h
+)
+
 add_library(hashbrown OBJECT
         src/hashbrown/hashbrown.h
         src/hashbrown/pointer_hash.cpp
         src/hashbrown/noncrypto_strings.cpp
+        src/hashbrown/crc.cpp
 )
-
-add_library(libutils OBJECT
-        src/libutils/target.cpp
-        src/libutils/target.h
+target_link_libraries(hashbrown
+        libutils
 )
 
 ###################################################
@@ -71,7 +75,17 @@ add_executable(${TARGETS_PREFIX}-readelf
 target_link_libraries(${TARGETS_PREFIX}-readelf libelf)
 
 ###################################################
-#Doxygen
+# Benchmark Utilities
+###################################################
+
+add_executable(${TARGETS_PREFIX}-hashbrown-microbench
+        src/bench/hashbrown.cpp
+        src/bench/bench.h
+)
+target_link_libraries(${TARGETS_PREFIX}-hashbrown-microbench hashbrown)
+
+###################################################
+# Doxygen
 ###################################################
 
 doxygen_add_docs(docs src ALL WARN_IF_UNDOCUMENTED)
