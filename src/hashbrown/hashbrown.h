@@ -51,11 +51,46 @@ namespace hashbrown {
              * It is up to the compiler to optimize this with SIMD and the like.
              */
             namespace native {
-
+                /**
+                 * @brief computes the crc1 remainder (parity bit) for the specified string (does count null byte)
+                 *
+                 * @param str string to compute parity bit for
+                 *
+                 * @return remainder as bool
+                 */
+                bool string(const std::string& str);
+                bool cstr(const char* str);
+                bool arb_cstr(const char* str, std::size_t size);
+                bool ubyte(std::uint8_t data);
+                bool sbyte(std::int8_t data);
+                bool uint16(std::uint16_t data);
+                bool int16(std::int16_t data);
+                bool uint32(std::uint32_t data);
+                bool int32(std::int32_t data);
+                bool uint64(std::uint64_t data);
+                bool int64(std::int64_t data);
+                bool uint128(std::uint64_t a, std::uint64_t b);
+                bool int128(std::int64_t a, std::uint64_t b);
+                bool arb_ubyte(std::uint8_t* data, std::size_t count, std::size_t offset = 0);
+                bool arb_byte(std::int8_t* data, std::size_t count, std::size_t offset = 0);
+                bool vec_ubyte(std::vector<std::uint8_t> data);
+                bool vec_byte(std::vector<std::int8_t> data);
+                bool arb_ushort(std::uint16_t* data, std::size_t count, std::size_t offset = 0);
+                bool arb_short(std::int16_t* data, std::size_t count, std::size_t offset = 0);
+                bool vec_ushort(std::vector<std::uint16_t> data);
+                bool vec_short(std::vector<std::int16_t> data);
+                bool arb_uint(std::uint32_t* data, std::size_t count, std::size_t offset = 0);
+                bool arb_int(std::int32_t* data, std::size_t count, std::size_t offset = 0);
+                bool vec_uint(std::vector<std::uint32_t> data);
+                bool vec_int(std::vector<std::int32_t> data);
+                bool arb_ulong(std::uint64_t* data, std::size_t count, std::size_t offset = 0);
+                bool arb_long(std::int64_t* data, std::size_t count, std::size_t offset = 0);
+                bool vec_ulong(std::vector<std::uint64_t> data);
+                bool vec_long(std::vector<std::int64_t> data);
             }
 
             /**
-             * @brief computes the crc1 remainder (parity bit) for the specified string (does count parity bit)
+             * @brief computes the crc1 remainder (parity bit) for the specified string (does count null byte)
              *
              * @param str string to compute parity bit for
              *
