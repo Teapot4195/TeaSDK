@@ -88,4 +88,4 @@ target_link_libraries(${TARGETS_PREFIX}-hashbrown-microbench hashbrown)
 # Doxygen
 ###################################################
 
-doxygen_add_docs(docs src ALL WARN_IF_UNDOCUMENTED)
+doxygen_add_docs(docs src ALL WARN_IF_UNDOCUMENTED EXTRACT_ALL EXTRACT_PRIVATE EXTRACT_STATIC GENERATE_TODOLIST)
