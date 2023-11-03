@@ -18,6 +18,11 @@ include_directories(src)
 find_package(Doxygen
         REQUIRED dot)
 
+set(Boost_USE_MULTITHREADED ON)
+find_package(Boost 1.83.0
+        REQUIRED
+        COMPONENTS)
+
 ###################################################
 # Common libraries used by many utilities
 ###################################################
@@ -60,6 +65,10 @@ target_link_libraries(hashbrown
 
 add_executable(${TARGETS_PREFIX}-tcc89
     src/c89/main.cpp
+        src/c89/Tokenizer.cpp
+        src/c89/Tokenizer.h
+        src/c89/Compiler_Diagnostics.cpp
+        src/c89/Compiler_Diagnostics.h
 )
 target_link_libraries(${TARGETS_PREFIX}-tcc89
         libelf

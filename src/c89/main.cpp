@@ -6,35 +6,56 @@
 #include <liblog/logger.h>
 #include <argparse/Argparse.h>
 
-std::unordered_map<std::string, std::pair<bool, std::string>> arg_is_switch {
-        {"--output", {false, "the location of the output file"}}
-};
+#include "Compiler_Diagnostics.h"
+#include "Tokenizer.h"
 
-std::unordered_map<std::string, std::string> short_form_expansion {
-        {"-o", "--output"}
-};
+namespace tcc89 {
+    std::vector<argparse::Arg> args;
 
-int main(int argc, char** argv) {
-    argparse::Parser argument_parser = argparse::Parser(arg_is_switch, short_form_expansion, argc, argv);
-    std::vector<argparse::Arg> args = argument_parser.ParseArgs();
-    std::vector<argparse::Arg> positional;
-    std::vector<argparse::Arg> other;
-    bool has_positional = false;
+    std::unordered_map<std::string, std::pair<bool, std::string>> arg_is_switch{
+            {"--output", {false, "the location of the output file"}}
+    };
 
-    for (auto & arg : args) {
-        if (arg.positional) {
-            has_positional = true;
-            break;
+    std::unordered_map<std::string, std::string> short_form_expansion{
+            {"-o", "--output"}
+    };
+
+    int main(int argc, char **argv) {
+        argparse::Parser argument_parser = argparse::Parser(arg_is_switch, short_form_expansion, argc, argv);
+        args = argument_parser.ParseArgs();
+        std::vector<argparse::Arg> positional;
+        std::vector<argparse::Arg> other;
+        bool has_positional = false;
+
+        for (auto &arg: args) {
+            if (arg.positional) {
+                has_positional = true;
+                positional.push_back(arg);
+            } else {
+                other.push_back(arg);
+            }
         }
+
+        if (has_positional) {
+            for (auto &file : positional) {
+                Tokenizer tokenize(preprocessor_symbols{}, file.value);
+                std::vector<Token> tokens = tokenize.tokenize();
+
+                tokenize.print(tokens);
+
+                // TODO: Done tokenize, need parsing
+            }
+        } else {
+            warn("at least one input file must be provided.");
+            argument_parser.PrintHelp();
+        }
+
+        diagnostics.print_diagnostics();
+
+        return 0;
     }
+}
 
-    if (has_positional) {
-
-        //TODO: Compiling files
-    } else {
-        warn("at least one input file must be provided.");
-        argument_parser.PrintHelp();
-    }
-
-    return 0;
+int main(int argc, char **argv) {
+    return tcc89::main(argc, argv);
 }
