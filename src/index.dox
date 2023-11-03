@@ -131,6 +131,8 @@
  *     <tr><td>libelf    <td>In progress  <td>Elf file format support library
  *     <tr><td>hashbrown <td>In progress  <td>Hash and hashmap support library
  *     <tr><td>libutils  <td>Not Started  <td>Common utilities library
+ *     <tr><td colspan="3">Codegen Support Libraries
+ *     <tr><td>libx86    <td>WIP          <td>x86 instruction set support library
  *     <tr><th colspan="3">Executables
  *     <tr><td>teasm86   <td>Not Started  <td>Teapots assembler for x86
  *     <tr><td>tcc89     <td>Blocked      <td>Teapots c compiler for c89
