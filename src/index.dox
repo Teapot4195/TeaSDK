@@ -2,7 +2,7 @@
  *
  * \tableofcontents
  *
- * \section Introduction
+ * \section intro Introduction
  *
  * This project started as a fun side project to learn how all this low level stuff worked, things like x86 assembly,
  * compilers and the like. Currently this project has a few subprojects.
@@ -13,17 +13,16 @@
  *
  * all cryptographic facilities provided in this project are IN NO WAY SECURE
  *
- * \section the TCC
+ * \section tcc the TCC
  *
- * The tcc is my attempt at a standards compliant C compiler currently it's standards compliance is unknown
- * section.
+ * The tcc is my attempt at a standards compliant C compiler it's current standards compliance is absolutely none
  *
- * \section Hashbrown
+ * \section hashbrown Hashbrown
  *
  * Hashes and hashtable support library
  *
  * <table>
- *     <caption id="multi_row">Hashbrown hash support</caption>
+ *     <caption>Hashbrown hash support</caption>
  *     <tr><th>Name                 <th>support
  *     <tr><th colspan="2">Cyclic Redundancy Checks (CRC)
  *     <tr><td>cksum                <td>None
@@ -124,7 +123,7 @@
  * \section all the tables
  *
  * <table>
- *     <caption id="multi_row">Project components</caption>
+ *     <caption>Project components</caption>
  *     <tr><th>Component <th>status       <th>Description
  *     <tr><th colspan="3">Libraries
  *     <tr><td>Argparse  <td>In progress  <td>Argument parsing
