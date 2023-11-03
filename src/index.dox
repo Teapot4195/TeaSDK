@@ -27,6 +27,7 @@
  *     <tr><td>tcc89     <td>Blocked      <td>Teapots c compiler for c89
  *     <tr><th colspan="3">Binutils
  *     <tr><td>readelf   <td>Done         <td>Reads data in elf file and prints them out
+ *     <tr><td>elfdump   <td>WIP          <td>Does a dump of the information in an elf file, such as program data
  * </table>
  *
  * <table>
