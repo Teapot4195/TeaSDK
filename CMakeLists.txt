@@ -60,6 +60,16 @@ target_link_libraries(hashbrown
 )
 
 ###################################################
+# Instruction Set Support libraries
+###################################################
+
+add_library(libx86 OBJECT
+        src/libx86/libx86.cpp
+        src/libx86/libx86.h
+        src/libx86/Instructions.h
+)
+
+###################################################
 # Executables
 ###################################################
 
@@ -76,6 +86,7 @@ target_link_libraries(${TARGETS_PREFIX}-tcc89
         libargparse
         hashbrown
         libutils
+        libx86
 )
 
 add_executable(${TARGETS_PREFIX}-readelf
